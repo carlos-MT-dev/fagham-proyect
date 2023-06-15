@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:wght@600&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: #1d6bdf !important; */
+  font-family: 'poppins';
+}
+/* html{
+
+  background-color: rgb(65, 164, 226);
+} */
+
+h1 {
+
+  color: aliceblue;
+  font-size: 5rem;
+  margin: 2.1rem 2rem;
+
+}
+
+.form-title {
+
+  background-color: #1d6bdf;
+  height: 17rem;
+  margin-top: 0px;
+}
+
+span {
+
+  color: white;
+  font-size: 1.25rem;
+  filter: opacity(.6);
+  margin: 2rem 2rem 5rem 2rem;
+}
+
+
+/* formulario de ingrrso de datos */
+
+
+.col-md-5 {
+  width: 30%;
+  height: 400px;
+  margin: 80px 80px 40px 40px;
+  float: left;
+
+
+}
+
+.formulario {
+
+  border: 1px solid black;
+  padding: 60px 40px 40px 40px;
+  border-radius: 20px;
+
+}
+
+.formulario p {
+
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.form-group {
+
+  margin-left: 40px;
+}
+
+.form-control {
+
+
+  height: 20px;
+
+}
+
+/* botones del formulario */
+
+.btn-group {
+
+  text-align: center;
+}
+
+/* botn de agregar */
+.btnAgre {
+  background-color: rgb(62, 201, 62);
+  height: 45px;
+  width: 120px;
+  border: 0px solid black;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* boton de modificar */
+
+.btnMod {
+  background-color: rgb(200, 200, 50);
+  height: 45px;
+  width: 120px;
+  border: 0px solid black;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* boton de cancelar */
+
+.btnCanc {
+  background-color: rgb(214, 77, 77);
+  height: 45px;
+  width: 120px;
+  border: 0px solid black;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+
+/* tabla */
+
+table{
+
+table-layout: fixed;
+width: 60%;
+border-collapse: collapse;
+border: 1px solid black; 
+}
+
+thead th:nth-child(1){
+  width: 7%;
+}
+thead th:nth-child(2){
+  width: 20%;
+}
+thead th:nth-child(3){
+  width: 15%;
+}
+thead th:nth-child(4){
+  width: 10%;
+}
+thead th:nth-child(5){
+  width: 10%;
+}
+thead th:nth-child(6){
+  width: 20%;
+}
+thead th:nth-child(7){
+  width: 18%;
+}
+
+th, td {
+padding: 20px;
+text-align: center;
+}
