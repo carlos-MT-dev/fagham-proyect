@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #002966;
+  background-color: #80a9e6;
 }
 
 
@@ -58,7 +58,7 @@ main {
   position: relative;
   gap: 1.4rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background-color: #4d94ff;
+  background-color: white;
 }
 
 .form p {

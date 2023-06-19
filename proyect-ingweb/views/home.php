@@ -121,6 +121,8 @@ $rol = validarRol();
                 </li>
             </ul>
         </section>
+
+
         <section class="section-about">
             <header>
                 <h2>Sobre nosotros</h2>
@@ -129,7 +131,7 @@ $rol = validarRol();
                 <li class="li-about">
                     <span>Ubicación</span>
                     <i class="uil uil-globe"></i>
-                    <p>Nos encontramos ubicados En Huarochiri-Chosica Santa Eulalia bla bla bla</p>
+                    <p>Nos encontramos ubicados En Huarochiri-Chosica Santa Eulalia</p>
                 </li>
                 <li class="li-about">
                     <span>Que ofrecemos</span>
