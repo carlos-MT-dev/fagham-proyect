@@ -9,11 +9,11 @@
   font-family: 'poppins';
 }
 
-/* html{
 
-  background-color: rgb(65, 164, 226);
-} */
+body {
 
+      background-color:red;
+}
 h1 {
 
   color: aliceblue;
@@ -36,7 +36,7 @@ text-align: center;
 
 .form-title {
 
-  background-color: #002966 !important;
+  background-color: #0e416b !important;
   height: 17rem;
   margin-top: 0px;
 }

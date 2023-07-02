@@ -15,7 +15,7 @@
     </li>
     <!--link de productos  -->
     <li class="li-link">
-        <a href="./products/products.php">
+        <a href="catalogo.php">
             <i class="uil uil-tag"></i>
             <span>Products</span>
         </a>
@@ -199,6 +199,7 @@
 
     ?>
 </div>
+
 
 <!-- formulario para poder agregar los datos -->
 <div class="col-md-5">

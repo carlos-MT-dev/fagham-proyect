@@ -1,0 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:wght@600&display=swap');
+
+* {
+  
+    /* background-color: #1d6bdf !important; */
+    font-family: 'poppins';
+  }
+body {
+
+    background-color: antiquewhite;
+}
+
+.princ-title{
+
+    background-color: #0e416b !important;
+    height: 17rem;
+    margin-top: 0px;
+}
+h1 {
+
+    color: aliceblue;
+    font-size: 5rem;
+    margin: 2.1rem 2rem;
+  
+  }
+  span {
+
+    color: white;
+    font-size: 1.25rem;
+    filter: opacity(.6);
+    margin: 2rem 2rem 5rem 2rem;
+  }
+
+  /* seccion de los contenedores para los productos y sus imagenes */
+  .container{
+    background-color:white;
+    height: 900px; 
+
+
+     display:flex ;
+     /*row|row-reverse|column|column-reverse */
+     flex-direction:row ; 
+    /* nowrap|wrap|wrap-reverse */
+     flex-wrap: wrap; 
+     /* es un short hand, para las propiedades de dorection y flex wrap */
+     flex-flow:row wrap;
+     /* flex-start|center|flex-end|flex-between|space-araund|space-evenly */
+     justify-content: space-around;
+     /* normal|stretch| center| start| end| flex-start |baseline|center*/
+     align-items: stretch;
+     /*flex-start| flex-end| center | stretch|  space-between| space-around |space-evenly*/
+     align-content: flex-start;
+  }
+
+  .card {
+
+    margin-top: 35px ;
+    width: 410px;
+    height: 450px;
+    border: medium solid #999;
+    border-radius: 4px;
+    background-color: aliceblue;
+    
+
+  }

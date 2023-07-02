@@ -39,7 +39,7 @@ $rol = validarRol();
                 </li>
                 <!--link de productos  -->
                 <li class="li-link">
-                    <a href="./products/products.php">
+                    <a href="./products_manager/services/catalogo.php">
                         <i class="uil uil-tag"></i>
                         <span>Products</span>
                     </a>
@@ -78,6 +78,14 @@ $rol = validarRol();
                    }
                  ?>
                  
+                <!-- apartado de sign in -->
+                 <li class="logout li-link">
+                    <a href="sign-in.php">
+                        <i class="uil uil-signout"></i>
+                        <span>sign in</span>
+                    </a>
+                </li>
+
                 <!-- link para cerrar sesion -->
                 <li class="logout li-link">
                     <a href="../controlers/logout.php">
