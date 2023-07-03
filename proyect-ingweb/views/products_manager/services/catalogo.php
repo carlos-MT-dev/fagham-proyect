@@ -1,134 +1,99 @@
 <!-- hacemos el llamado a la conexion con la base de datos -->
-    <?php 
-    
-    try{
-    $dsn="mysql:dbname=fagham;host=127.0.0.1 ";
-    $usuario="root";
-    $contra="";
-    
-    $con= new PDO($dsn, $usuario,$contra);
+<?php
+
+try {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+
+    $con = new PDO("mysql:host=$servername;dbname=fagham", $username, $password);
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+
     // condicionales para los errores de conexion
-    if($con){
-      echo "la conexion fue exitosa";
-    }else{
+    if ($con) {
+        //   echo "la conexion fue exitosa";
+    } else {
         echo "ocurrio algo en la conexion";
     }
-    
-    }catch(Exception $ex){
-    
-      echo "El error ocurre en :".$ex->getMessage(); 
-    }
-    ?>
-  
+
+} catch (PDOException $ex) {
+
+    echo "El error ocurre en :" . $ex->getMessage();
+}
+
+?>
+<!-- consulta a la base de datos a cerca de la informacion-->
+<!-- uso de switch para cada uno de los eventos -->
+<?php
 
 
+
+?>
+
+<!-- cuerpo del catalogo -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
+
     <link rel="stylesheet" href="catalogo_manager.css">
 
 
 
 </head>
+
 <body>
-<div class="princ-title">
+    <div class="princ-title">
 
-    <h1>ENCUENTRA LO QUE BUSCAS AQUI</h1>
-    <span>Seccion de Productos (catalogos)</span>
-</div>    
-
-   
-
-<div class="container">
-
-
-    <div class="card">
-
-        <img class="card-img-top" src="brand-stp.png" alt="Title">
-
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <a name="" id="" class="btn btn-primary" href="http://goalkicker.com" role="button">Ver mas</a>
-        </div>
-
+        <h1>ENCUENTRA LO QUE BUSCAS AQUI</h1>
+        <span>Seccion de Productos (catalogos)</span>
     </div>
 
-  
-    
-     <!-- <div class="card">
 
-        <img class="card-img-top" src="brand-stp.png" alt="Title">
 
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <a name="" id="" class="btn btn-primary" href="http://goalkicker.com" role="button">Ver mas</a>
-        </div>
+    <div class="container">
 
-    </div>
-     <div class="card">
+        <!-- llamada automatica a todos los valores indexados en la tabla productos -->
 
-        <img class="card-img-top" src="brand-stp.png" alt="Title">
+        <?php
+        //  consulta de todos los valores
+        $call = $con->prepare("SELECT*FROM productos");
+        $call->execute();
+        //  asociamos el resultado a sus cabeceras idexadas
+        $resIt = $call->fetchAll(PDO::FETCH_ASSOC);
+        ?>
 
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <a name="" id="" class="btn btn-primary" href="http://goalkicker.com" role="button">Ver mas</a>
-        </div>
 
-    </div>
+        <!-- inicio del bucle para traer toda la informacion -->
 
-      <div class="card">
+        <?php foreach ($resIt as $e) { ?>
+            <div class="card">
 
-        <img class="card-img-top" src="brand-stp.png" alt="Title">
+                <img class="card-img-top" src="<?php echo "../assets/".$e['imagen'] ?>" alt="<?php echo "el nombre de la imagen es:".$e['imagen'];?>">
 
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <a name="" id="" class="btn btn-primary" href="http://goalkicker.com" role="button">Ver mas</a>
-        </div>
+                <section class="especify-card">
+                  <h4>Modelo: <?php echo $e['modelo']?></h4>
+                  <h4>Marca: <?php echo $e['marca']?></h4>
+                  <h4>Año: <?php echo $e['ano']?></h4>
+                  <h4>Precio: <?php echo $e['precio']?></h4>
+                </section>
 
-    </div>
-    <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"></h4>
+                </div>
 
-        <img class="card-img-top" src="brand-stp.png" alt="Title">
+            </div>
+        <?php } ?>
 
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <a name="" id="" class="btn btn-primary" href="http://goalkicker.com" role="button">Ver mas</a>
-        </div>
+
 
     </div>
-    <div class="card">
-
-        <img class="card-img-top" src="brand-stp.png" alt="Title">
-
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <a name="" id="" class="btn btn-primary" href="http://goalkicker.com" role="button">Ver mas</a>
-        </div>
-
-    </div> -->
-
-</div>
 
 
 </body>
+
 </html>
-
-
-<?php
-//funciones para las consultas sql
-
-function callAll(){
-$sql="SELECT * FROM productos";
-$conexion=$GLOBALS['$con'];
-$consult=$conexion->prepare(); 
-
-}
-
-?>

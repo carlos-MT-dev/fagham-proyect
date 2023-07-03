@@ -57,11 +57,24 @@ h1 {
   .card {
 
     margin-top: 35px ;
-    width: 410px;
-    height: 450px;
+    width: 310px;
+    height: 500px;
     border: medium solid #999;
     border-radius: 4px;
     background-color: aliceblue;
     
 
+  }
+
+  .card-img-top{
+
+   width: 287px;
+   height: 300px; 
+   margin-top: 10px;
+   margin-left: 10px; 
+  }
+
+  .especify-card{
+
+    margin-left: 10px; 
   }

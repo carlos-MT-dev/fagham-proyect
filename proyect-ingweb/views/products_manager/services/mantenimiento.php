@@ -120,12 +120,31 @@
                 // proceso de envio de datos a la base de datos
                 $stmt = $con->prepare("INSERT INTO productos(modelo, marca, ano, precio,categoria, imagen)VALUES(:modelo, :marca, :ano, :precio, :categoria, :imagen)");
 
+
+                // logica para mover el archivo de imagen a una carpeta en especifico
+
+                $time=new DateTime;
+                // condicional para evaluar si existe envio, en ese caso se hace la concatenacion de la imagen con la hora actual en la que se modifico
+                $nomArch=($EntImagen!="")?$time->getTimestamp()."_".$_FILES['txtImagen']['name']: "imagen.png";
+              
+                // se guarda el valor de tmp_name del archivo
+                $tmpimagen=$_FILES['txtImagen']['tmp_name'];
+                // se realiza el movimiento del archivo a su carpeta destinada, solo si existe un archivo valido
+                if($tmpimagen!=""){
+                  move_uploaded_file($tmpimagen, "../assets/".$nomArch);
+                  echo "se logro mover el archivo";
+                }else{
+                    echo "no se logro mover el archivo";
+                }
+
+
+
                 $stmt->bindParam(':modelo', $EntModelo);
                 $stmt->bindParam(':marca', $EntMarca);
                 $stmt->bindParam(':ano', $EntAno);
                 $stmt->bindParam(':precio', $EntPrecio);
                 $stmt->bindParam(':categoria', $EntCategoria);
-                $stmt->bindParam(':imagen', $EntImagen);
+                $stmt->bindParam(':imagen', $nomArch);
                 $stmt->execute();
                 
                
@@ -150,6 +169,7 @@
                 $stmt->bindParam(':categoria', $EntCategoria);
                 $stmt->bindParam(':imagen', $EntImagen);
                 $stmt->execute();
+                
                 
                 echo "se logro modificar los datos" ;
                 
